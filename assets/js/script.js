@@ -1,4 +1,4 @@
-//declare array used for localStorage
+//declare object used for localStorage
 var agendaArray = 
     {"9AM": "",
     "10AM": "",
@@ -29,7 +29,7 @@ function init() {
         //setup time boxes and their attributes
         var timeSlot = $('<div>');
         timeSlot.attr({'class': 'time-block hour col-1',
-                        'id': 'time_' + i });
+                        'id': 'time_' + i});
         timeSlot.css({'border-radius': '0',
                       'text-align': 'left',
                       'padding': '40px 0 0 5px'});
@@ -43,7 +43,8 @@ function init() {
                     'text-align':'left',
                     'padding-top':'10px'});
         agenda.attr({'contenteditable':'true',
-                    'id': 'agenda_' + i});
+                    'id': 'agenda_' + i,
+                    'placeholder': 'Add Agenda items here'});
         agenda.appendTo($(row));
 
         //set agenda colour based on time of day
