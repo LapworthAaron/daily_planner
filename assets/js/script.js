@@ -7,8 +7,7 @@ var agendaArray =
     "2PM": "",
     "3PM": "",
     "4PM": "",
-    "5PM": "",
-    "6PM": ""}
+    "5PM": ""}
 
 init();
 
@@ -23,7 +22,7 @@ function init() {
             'margin': '50px'});
     
     //**this needs to use moment.js set time for timeSlot **/
-    for (var i = 9; i < 19; i++) {
+    for (var i = 9; i < 18; i++) {
         //setup time boxes
         var timeSlot = $('<div>');
         timeSlot.attr('class', 'time-block hour col-1');
