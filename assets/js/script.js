@@ -45,16 +45,18 @@ function init() {
         agenda.attr({'contenteditable':'true',
                     'id': 'agenda_' + i});
         agenda.appendTo($(row));
+
         //set agenda colour based on time of day
+        var currentTime = moment().minute(0).second(0);
         if (moment().hour(i).minute(0).second(0).format("HA") ===
-            moment().minute(0).second(0).format("HA")) {
-                agenda.attr('class', 'present col-10');
+            currentTime.format("HA")) {
+            agenda.attr('class', 'present col-10');
         } else if (moment().hour(i).minute(0).second(0) <
-                    moment().minute(0).second(0)) {
-                        agenda.attr('class', 'past col-10'); 
-                } else {
-                    agenda.attr('class', 'future col-10'); 
-                }
+                    currentTime) {
+                agenda.attr('class', 'past col-10'); 
+            } else {
+                agenda.attr('class', 'future col-10'); 
+        }
 
         //get agenda text values from local storage
         getAgendas();
